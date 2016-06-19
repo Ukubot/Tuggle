@@ -1,29 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
   <meta charset="UTF-8">
   <title>Stopwatch</title>
   <link rel="stylesheet" href="mystyle.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script type="text/javascript" src="myscript.js"></script>
 </head>
 <body>
 
   <header>
-
+  <div class="">
+    <p>Tasksafe</p>
+  </div>
   </header>
 
-  <div class="center-container">
-    <div class="stopwatch">
-      00:00
-    </div>
-    <div class="tracked-activity">
-      <button class="btn new-task"> + </button>
-      <input placeholder="Browsing this website" type="">
-      <button class="btn stop-task"> Stop </button>
-    </div>
-    <div class="task-list">
-      <ul>
-        <li></li>
-      </ul>
+  <div ng-controller="myController">
+    <button ng-click="resetTimerWithTimeout()">stop timer</button>
+
+  <div ng-controller="TrackCtrl as Trk">
+    <div class="center-container">
+      <div class="stopwatch">
+
+      </div>
+      <div class="tracked-activity">
+        <button class="btn new-task" ng-click="Trk.data[Trk.data.length] = {}"> + </button>
+        <input class="form-control" placeholder="Browsing this website" ng-model="data.text">
+        <div class="input-time"><p> {{timerWithTimeout | hhmmss}}</p></div>
+        <button class="btn stop-task" ng-click="startTimerWithTimeout()"> start </button>
+      </div>
+      <div class="task-list">
+        <ul>
+          <li ng-repeat="data in Trk.data">
+            <div class="tracked-activity">
+              <button class="btn new-task" ng-click="Trk.data[Trk.data.length] = {}"> + </button>
+              <input class="form-control" placeholder="Browsing this website" ng-model="data.text">
+              <div class="input-time"><p> {{timerWithTimeout | hhmmss}}</p></div>
+              <button class="btn stop-task" ng-click="startTimerWithTimeout()"> start </button>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 
