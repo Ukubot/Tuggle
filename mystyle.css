@@ -1,0 +1,83 @@
+body {
+  background-color: lightgray;
+  font-family: helvetica;
+  text-shadow: 2px 2px gray;
+}
+
+h1 {
+  font-size: 3em;
+  color: #fff;
+}
+
+.stopwatch {
+  font-size: 6em;
+  color: #fff;
+  text-align: center;
+  font-weight: 100;
+}
+
+
+.center-container {
+  margin-top: 200px;
+  margin-left: 30%;
+  margin-right: 30%;
+  width: auto;
+}
+
+.tracked-activity {
+  padding-top: 40px;
+  width: 100%;
+  height: 70px;
+  float: right;
+}
+
+.center-container input {
+  height: 50px;
+  float: left;
+  width: calc(100% - 155px);
+  margin: 0;
+  border: none;
+  padding: 0;
+  padding-left: 5px;
+}
+
+.stop-task {
+  width: 100px;
+  background-color: #373737;
+  color: #fff;
+  float: left;
+}
+
+.stop-task:hover {
+  background-color: #454545;
+  cursor: pointer;
+}
+
+.new-task {
+  width: 50px;
+  background-color: #47be00;
+  color: #fff;
+  float: left;
+}
+
+.new-task:hover {
+  background-color: #27d144;
+  cursor: pointer;
+}
+
+.btn {
+  height: 50px;
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+.task-list {
+  float: right;
+  width: 100%;
+  border-bottom: solid 1px gray;
+}
+
+.task-list li {
+list-style: none;
+}
